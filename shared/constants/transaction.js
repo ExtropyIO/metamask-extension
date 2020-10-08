@@ -32,7 +32,7 @@ export const TRANSACTION_STATUS_DROPPED = 'dropped'
 
 // Transaction Category is a MetaMask construct used internally
 // Used to categorize transactions by purpose for displaying information to the user
-// 1. `'tranfser'`            - A token transaction where the user is sending tokens that they
+// 1. `'transfer'`            - A token transaction where the user is sending tokens that they
 //                              own to another address
 // 2. `'transferfrom'`        - A token transaction transferring tokens from an account that
 //                              the sender has an allowance of (see the approve category).
