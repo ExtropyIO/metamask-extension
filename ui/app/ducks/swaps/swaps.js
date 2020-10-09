@@ -23,7 +23,7 @@ import {
 import { AWAITING_SWAP_ROUTE, BUILD_QUOTE_ROUTE, LOADING_QUOTES_ROUTE, SWAPS_ERROR_ROUTE, SWAPS_MAINTENANCE_ROUTE } from '../../helpers/constants/routes'
 import { fetchTradesInfo, fetchSwapsFeatureLiveness } from '../../pages/swaps/swaps.util'
 import { calcGasTotal } from '../../pages/send/send.utils'
-import { decimalToHex, getValueFromWeiHex, hexMax, decGWEIToHexWEI, hexWEIToDecETH } from '../../helpers/utils/conversions.util'
+import { decimalToHex, getValueFromWeiHex, hexMax, decGWEIToHexWEI, hexWEIToDecETH, hexToDecimal } from '../../helpers/utils/conversions.util'
 import { constructTxParams } from '../../helpers/utils/util'
 import { calcTokenAmount } from '../../helpers/utils/token-util'
 import {
@@ -277,7 +277,7 @@ export const fetchQuotesAndSetQuoteState = (history, inputValue, maxSlippage, me
       {
         ...ETH_SWAPS_TOKEN_OBJECT,
         string: getValueFromWeiHex({ value: selectedAccount.balance, numberOfDecimals: 4, toDenomination: 'ETH' }),
-        balance: selectedAccount.balance,
+        balance: hexToDecimal(selectedAccount.balance),
       } :
       fetchParams?.metaData?.sourceTokenInfo
     const selectedFromToken = getFromToken(state) || fetchParamsFromToken || {}
