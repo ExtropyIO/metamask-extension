@@ -43,7 +43,8 @@
     align-items: center;
   }
 
-  &__column-headers, &__row {
+  &__column-headers,
+  &__row {
     display: flex;
     align-items: center;
     padding-left: 20px;
